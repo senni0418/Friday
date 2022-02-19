@@ -8,7 +8,7 @@ import Error from './features/Error';
 // import Register from "./components/Authentication/Register";
 // import Reset from "./components/Authentication/Reset";
 // import Dashboard from "./components/Authentication/Dashboard";
-import Journal from './features/Journal';
+import JournalMain from './features/JournalMain';
 import Assessment from './features/Assessment';
 import About from './features/About'
 
@@ -20,7 +20,7 @@ const App = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/assessment" element={<Assessment />} />
-          <Route path="/journal" element={<Journal />} />
+          <Route path="/journal" element={<JournalMain />} />
           <Route path='/feedback' component={() => {
             window.location.href = 'https://google.com';
             return null;
