@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React, { useState, ReactElement } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import './App.css';
 
-function App() {
+import Login from './components/Authentication/Login';
+import Home from './features/Home';
+import Error from './features/Error';
+import Register from "./components/Authentication/Register";
+import Reset from "./components/Authentication/Reset";
+import Dashboard from "./components/Authentication/Dashboard";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login/>} />
+          <Route path="/app/home" element={<Home />} />
+          <Route path="/*" element={<Error/>} />
+          <Route path='/feedback' component={() => {
+            window.location.href = 'https://google.com';
+            return null;
+          }}/>
+          <Route path="/" element={<Login/>} />
+          <Route exact path="/register" element={<Register />} />
+          <Route exact path="/reset" element={<Reset />} />
+          <Route exact path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </Router>
   );
-}
+};
+
 
 export default App;
