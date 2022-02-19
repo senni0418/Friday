@@ -5,7 +5,6 @@ import TextField from '@mui/material/TextField';
 const Journal = () => {
     const [text, setText] = useState('')
 
-
     return (
         <>
             <ResponsiveAppBar/>
@@ -15,7 +14,12 @@ const Journal = () => {
                     multiline
                     rows={20}
                     sx={{width: 1000}}
+                    value={text}
+                    onChange={(e) => {
+                        setText(e.target.value)
+                    }}
                 />
+
             </div>
         </>
     );
