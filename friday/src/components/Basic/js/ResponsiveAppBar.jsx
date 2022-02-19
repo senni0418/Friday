@@ -15,7 +15,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { grey } from '@mui/material/colors';
 import { teel} from '@mui/material/colors';
 
-const pages = ['About', 'Assessment','Feedback', 'Journal'];
+const pages = ['About', 'Journal', 'Assessment', 'Feedback'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const defaultColor = grey[800]
 const ResponsiveAppBar = () => {
