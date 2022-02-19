@@ -6,7 +6,9 @@ import Box from '@mui/material/Box';
 import MicIcon from '@mui/icons-material/Mic';
 import MicOffRoundedIcon from '@mui/icons-material/MicOffRounded';
 import RecordRTC, { StereoAudioRecorder } from 'recordrtc';
-
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import Grid from '@mui/material/Grid';
+import { palette } from '@mui/system';
 
 let socket;
 let recorder;
@@ -22,6 +24,8 @@ const JournalAudio = () => {
     const [negativeResult, setNegative] = useState('')
 
     const [neutralResult, setNeutral] = useState('')
+
+    const [hasResult, setHasResult] = useState(true)
 
 
     const onClick = () => {
@@ -139,9 +143,32 @@ const JournalAudio = () => {
                 <IconButton aria-label="Mic" component="span" onClick={micOnClick}>
                     {isRecording? <MicOffRoundedIcon sx={{ fontSize: 35 }}/> : <MicIcon sx={{ fontSize: 35 }}/>}
                 </IconButton>
-                <Button onClick={onClick}>Button</Button>
+                <IconButton aria-label="Mic" component="span" onClick={micOnClick}>
+                    <CheckCircleIcon sx={{ fontSize: 35 }}/>
+                </IconButton>
             </div>
-            <div>result here</div>
+            {hasResult ? <div style={{marginTop: '100px'}}>
+                <Box sx={{ typography: 'title', textAlign:'center', fontWeight: 'bold', fontSize: 30 }}>AI thinks you should ...</Box>
+                <div style={{marginTop: '100px'}}>
+                    <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2}>
+                        <Box gridColumn="span 4">
+                            <div style={{display: 'flex',justifyContent:'center'}}>
+                                aaa
+                            </div>
+                        </Box>
+                        <Box gridColumn="span 4">
+                            <div style={{display: 'flex',justifyContent:'center'}}>
+                                abc
+                            </div>
+                        </Box>
+                        <Box gridColumn="span 4">
+                            <div style={{display: 'flex',justifyContent:'center'}}>
+                                abc
+                            </div>
+                        </Box>
+                    </Box>
+                </div>
+            </div>: <div/>}
         </>
        
     );
