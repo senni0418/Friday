@@ -23,7 +23,6 @@ const Journal = () => {
 
     return (
         <>
-            <ResponsiveAppBar/>
             <div style={{display: 'flex',justifyContent:'center', marginTop: '100px'}}>
                 <Box>
                     <TextField
