@@ -2,11 +2,24 @@ import React, {useState} from 'react';
 import ResponsiveAppBar from '../components/Basic/js/ResponsiveAppBar';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import InputAdornment from '@mui/material/InputAdornment';
 import Box from '@mui/material/Box';
 
 const Journal = () => {
+    
     const [text, setText] = useState('')
+
+    const [postiveResult, setPositive] = useState('')
+
+    const [negativeResult, setNegative] = useState('')
+
+    const [neutralResult, setNeutral] = useState('')
+
+
+    const onClick = () => {
+        let plainText = text.replace(/(\r\n|\n|\r)/gm, "");
+        
+    }
+
 
     return (
         <>
@@ -23,10 +36,11 @@ const Journal = () => {
                             setText(e.target.value)
                         }}
                     />
-                </Box>           
+                </Box>    
+                {console.log(text)}       
             </div>
             <div style={{display: 'flex',justifyContent:'right', marginTop: '10px', marginRight: '410px'}}>
-                <Button>Button</Button>
+                <Button onClick={onClick}>Button</Button>
             </div>
             <div>result here</div>
         </>
