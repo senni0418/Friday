@@ -14,7 +14,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { grey } from '@mui/material/colors';
 
-const pages = ['About', 'Assessment', 'Feedback'];
+const pages = ['About', 'Journal', 'Assessment', 'Feedback'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const defaultColor = grey[800]
 const ResponsiveAppBar = () => {
