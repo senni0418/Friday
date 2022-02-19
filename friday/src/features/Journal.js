@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
-import ResponsiveAppBar from '../components/Basic/js/ResponsiveAppBar';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 
 const Journal = () => {
-    
     const [text, setText] = useState('')
 
     const [postiveResult, setPositive] = useState('')
@@ -17,7 +15,6 @@ const Journal = () => {
 
     const onClick = () => {
         let plainText = text.replace(/(\r\n|\n|\r)/gm, "");
-        
     }
 
 
