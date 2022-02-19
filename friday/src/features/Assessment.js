@@ -1,6 +1,6 @@
 import React from "react"
 import { useState  } from "react"
-// import "../styles/Assessment.css"
+import "../styles/Assessment.css"
 import { qBank, scoreMatch } from "../questions/questionBank";
 function Assessment() {
 
