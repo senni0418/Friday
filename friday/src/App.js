@@ -25,8 +25,8 @@ const App = () => {
           <Route path='/feedback' component={() => {
             window.location.href = 'https://google.com';
             return null;
-          }}/>
-          <Route path="/*" element={<Error/>} />  */}
+          }}/> */}
+          <Route path="/*" element={<Error/>} />
       </Routes>
     </Router>
   );
