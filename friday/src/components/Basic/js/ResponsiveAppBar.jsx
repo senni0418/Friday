@@ -13,8 +13,9 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { grey } from '@mui/material/colors';
+import { teel} from '@mui/material/colors';
 
-const pages = ['About', 'Assessment', 'Feedback'];
+const pages = ['About', 'Assessment','Feedback', 'Journal'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const defaultColor = grey[800]
 const ResponsiveAppBar = () => {
@@ -69,7 +70,7 @@ const ResponsiveAppBar = () => {
             FRIDAY
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (<Button key={page} onClick={() => pagesOnClick(page)} sx={{ my: 2, color: 'white', display: 'block', color: defaultColor}}>
+            {pages.map((page) => (<Button key={page} onClick={() => pagesOnClick(page)} sx={{ my: 2, display: 'block', color: defaultColor}}>
                 {page}
               </Button>))}
           </Box>
