@@ -8,6 +8,7 @@ import Error from './features/Error';
 import Register from "./components/Authentication/Register";
 import Reset from "./components/Authentication/Reset";
 import Dashboard from "./components/Authentication/Dashboard";
+import Assessment from "./features/Assessment"
 
 const App = () => {
   return (
