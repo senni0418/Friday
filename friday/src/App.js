@@ -8,9 +8,9 @@ import Error from './features/Error';
 import Register from "./components/Authentication/Register";
 import Reset from "./components/Authentication/Reset";
 import Dashboard from "./components/Authentication/Dashboard";
+import Assessment from "./features/Assessment"
 import ResponsiveAppBar from './components/Basic/js/ResponsiveAppBar';
 import Journal from './features/Journal';
-import Assessment from './features/Assessment';
 import About from './features/About'
 
 const App = () => {
