@@ -30,6 +30,31 @@ const JournalAudio = () => {
 
     const onClick = () => {
         let plainText = text.replace(/(\r\n|\n|\r)/gm, "");
+        let url = 'http://localhost:5000/sentiment';
+        let data = {text: plainText};
+        
+        fetch(url, {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'}, 
+            body: JSON.stringify(data)
+        }).then(res => {
+            console.log("Request complete! response:", res);
+        });
+
+        // var request = new Request(url, 
+        //     { 
+        //         method: 'POST', 
+        //         body: {'text': plainText}, 
+        //         headers: new Headers({ 'Content-Type': 'application/json' }) 
+        //     });
+
+        // fetch(request) 
+        //     .then(resp => { 
+        //         console.log(resp)        
+        //     }) 
+        //     .catch(err => { 
+        //         console.log(err)         
+        //     });
     }
 
     const micOnClick = async () => {
@@ -143,7 +168,7 @@ const JournalAudio = () => {
                 <IconButton aria-label="Mic" component="span" onClick={micOnClick}>
                     {isRecording? <MicOffRoundedIcon sx={{ fontSize: 35 }}/> : <MicIcon sx={{ fontSize: 35 }}/>}
                 </IconButton>
-                <IconButton aria-label="Mic" component="span" onClick={micOnClick}>
+                <IconButton aria-label="submit" component="span" onClick={onClick}>
                     <CheckCircleIcon sx={{ fontSize: 35 }}/>
                 </IconButton>
             </div>
