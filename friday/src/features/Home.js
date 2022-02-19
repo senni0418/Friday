@@ -1,9 +1,11 @@
 import React from 'react';
+import ResponsiveAppBar from '../components/Basic/js/ResponsiveAppBar';
 
-const Login = () => {
+const Home = () => {
     return (
-        <div>this is my Login component</div>
+        <div>
+            <ResponsiveAppBar/>
+        </div>
     );
 }
-
-export default Login
+export default Home

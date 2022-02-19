@@ -9,6 +9,10 @@ import Register from "./components/Authentication/Register";
 import Reset from "./components/Authentication/Reset";
 import Dashboard from "./components/Authentication/Dashboard";
 import Assessment from "./features/Assessment"
+import ResponsiveAppBar from './components/Basic/js/ResponsiveAppBar';
+import Journal from './features/Journal';
+import Assessment from './features/Assessment';
+import About from './features/About'
 
 const App = () => {
   return (
@@ -21,10 +25,13 @@ const App = () => {
             window.location.href = 'https://google.com';
             return null;
           }}/>
-          <Route path="/" element={<Login/>} />
+          <Route path="/" element={<Home/>} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/reset" element={<Reset />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route path="/app/about" element={<About />} />
+          <Route path="/app/assessment" element={<Assessment />} />
+          <Route path="/app/journal" element={<Journal />} />
       </Routes>
     </Router>
   );
