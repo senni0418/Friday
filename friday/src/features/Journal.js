@@ -4,7 +4,6 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 
 const Journal = () => {
-
     const [text, setText] = useState('')
 
     const [postiveResult, setPositive] = useState('')
@@ -16,7 +15,6 @@ const Journal = () => {
 
     const onClick = () => {
         let plainText = text.replace(/(\r\n|\n|\r)/gm, "");
-
     }
 
 
@@ -34,8 +32,8 @@ const Journal = () => {
                             setText(e.target.value)
                         }}
                     />
-                </Box>
-                {console.log(text)}
+                </Box>    
+                {console.log(text)}       
             </div>
             <div style={{display: 'flex',justifyContent:'right', marginTop: '10px', marginRight: '410px'}}>
                 <Button onClick={onClick}>Button</Button>
