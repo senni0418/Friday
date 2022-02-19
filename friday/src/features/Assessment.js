@@ -26,57 +26,57 @@ function Assessment() {
 
     return (
         <div>
-        <ResponsiveAppBar/>
-        <div className="page">
-            <div className='assessment'>
-                {showScore ? (
-                    <>
-                        <div className='score-section'>
-                            Your result: {score}
-                        </div>
-                        <div className="interpretation" style={{color: colorSeverity[ score > 24 ? 4 : Math.floor(score / 5) ]}}>
-                            {scoreMatch[ score > 24 ? 4 : Math.floor(score / 5)].Interpretation}
-                        </div>
-
-                        <div className="recommendation">
-                            <span>Recommendation: </span>
-                            {scoreMatch[ score > 24 ? 4 : Math.floor(score / 5) ].Suggestion}
-                        </div>
-                    </>
-
-                ) : (
-                    <>
-                        <div className='question-section'>
-                            <div className='question-count'>
-                                <span>Question {currentQuestion + 1}</span>
+            <ResponsiveAppBar/>
+            <div className="page">
+                <div className='assessment'>
+                    {showScore ? (
+                        <>
+                            <div className='score-section'>
+                                Your result: {score}
                             </div>
-                            <div>Over the past 2 weeks, how often have you been bothered by any of the following problems: </div>
-                            <div className='question-text'>
-                                {questions[currentQuestion].question}
+                            <div className="interpretation" style={{color: colorSeverity[ score > 24 ? 4 : Math.floor(score / 5) ]}}>
+                                {scoreMatch[ score > 24 ? 4 : Math.floor(score / 5)].Interpretation}
                             </div>
-                        </div>
-                        <div className='answer-section'>
-                            {questions[currentQuestion].answers.map((answerOption) => (
-                                <button onClick={() => handleAnswerOptionClick(questions[currentQuestion].answers.indexOf(answerOption))}>{answerOption}</button>
-                            ))}
-                        </div>
-                    </>
-                )}
-            </div>
-            {showScore ?  (
-                <div className="mental-help">
-                    <div className="prompt">
-                        <h2>Need mental health services? </h2>
-                    </div>
-                    <div className="link">
-                        <a href="https://www.camh.ca/en/health-info/guides-and-publications/looking-for-mental-health-services"> Visit here </a>
-                    </div>
+
+                            <div className="recommendation">
+                                <span>Recommendation: </span>
+                                {scoreMatch[ score > 24 ? 4 : Math.floor(score / 5) ].Suggestion}
+                            </div>
+                        </>
+
+                    ) : (
+                        <>
+                            <div className='question-section'>
+                                <div className='question-count'>
+                                    <span>Question {currentQuestion + 1}</span>
+                                </div>
+                                <div>Over the past 2 weeks, how often have you been bothered by any of the following problems: </div>
+                                <div className='question-text'>
+                                    {questions[currentQuestion].question}
+                                </div>
+                            </div>
+                            <div className='answer-section'>
+                                {questions[currentQuestion].answers.map((answerOption) => (
+                                    <button onClick={() => handleAnswerOptionClick(questions[currentQuestion].answers.indexOf(answerOption))}>{answerOption}</button>
+                                ))}
+                            </div>
+                        </>
+                    )}
                 </div>
-            ):
-                <></>
-            }
+                {showScore ?  (
+                    <div className="mental-help">
+                        <div className="prompt">
+                            <h2>Need mental health services? </h2>
+                        </div>
+                        <div className="link">
+                            <a href="https://www.camh.ca/en/health-info/guides-and-publications/looking-for-mental-health-services"> Visit here </a>
+                        </div>
+                    </div>
+                ):
+                    <></>
+                }
 
-        </div>
+            </div>
         </div>
     )
 
