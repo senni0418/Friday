@@ -1,8 +1,11 @@
 import React from 'react';
+import Intro from '../components/About/Intro'
 
-const About = () => {
+function About() {
     return (
-        <div>this is my about component</div>
+        <div class="about">
+            <Intro></Intro>
+        </div>
     );
 }
 
