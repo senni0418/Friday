@@ -8,6 +8,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Paper from '@mui/material/Paper';
 import Journal from "./Journal";
 import JournalAudio from "./JournalAudio";
+import ResponsiveAppBar from '../components/Basic/js/ResponsiveAppBar';
 
 
 //tsc BottomTabs.tsx --jsx preserve -t es2020 --outDir js --noEmit false
@@ -16,6 +17,8 @@ export default function JournalMain() {
   const [showAudio, setShowAudio] = React.useState(true);
   return (
     <Box sx={{ pb: 7 }}>
+      <ResponsiveAppBar/>
+
       <CssBaseline />
       {showAudio ? <JournalAudio/> : <Journal/>
       }

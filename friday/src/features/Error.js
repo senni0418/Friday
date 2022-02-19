@@ -1,8 +1,12 @@
 import React from 'react';
-
+import ResponsiveAppBar from '../components/Basic/js/ResponsiveAppBar';
+import Footer from '../components/Basic/js/Footer';
 const Error = () => {
     return (
-        <div>this is my Error component</div>
+        <div>
+            <ResponsiveAppBar/>
+            <Footer/>
+        </div>
     );
 }
 

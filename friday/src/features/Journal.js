@@ -1,8 +1,9 @@
 import React from 'react';
-
 const Journal = () => {
     return (
-        <div>this is my Journal component</div>
+        <div>
+            This is my audio text component
+        </div>
     );
 }
 

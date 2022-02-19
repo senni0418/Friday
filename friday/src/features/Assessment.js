@@ -2,6 +2,8 @@ import React from "react"
 import { useState  } from "react"
 import "../styles/Assessment.css"
 import { qBank, scoreMatch } from "../questions/questionBank";
+import ResponsiveAppBar from '../components/Basic/js/ResponsiveAppBar';
+
 function Assessment() {
 
     const questions = qBank
@@ -23,6 +25,8 @@ function Assessment() {
 	};
 
     return (
+        <div>
+        <ResponsiveAppBar/>
         <div className="page">
             <div className='assessment'>
                 {showScore ? (
@@ -72,6 +76,7 @@ function Assessment() {
                 <></>
             }
 
+        </div>
         </div>
     )
 
