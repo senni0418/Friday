@@ -6,6 +6,8 @@ import Box from '@mui/material/Box';
 
 const Journal = () => {
     
+
+    
     const [text, setText] = useState('')
 
     const [postiveResult, setPositive] = useState('')
