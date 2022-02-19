@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+.footer {
+  position:absolute;
+  left:45vw;
+  right:45vw;
+  bottom:0;
+  padding-bottom:20px;
+}
