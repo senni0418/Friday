@@ -17,7 +17,7 @@ const Login = () => {
       // maybe trigger a loading screen
       return;
     }
-    if (user) navigate("/app/home");
+    if (user) navigate("/home");
   }, [user, loading]);
   return (
     <div className="login">

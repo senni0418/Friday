@@ -1,6 +1,6 @@
 import React from "react"
 import { useState  } from "react"
-import "../styles/Assessment.css"
+// import "../styles/Assessment.css"
 import { qBank, scoreMatch } from "../questions/questionBank";
 function Assessment() {
 
@@ -33,7 +33,7 @@ function Assessment() {
                         <div className="interpretation" style={{color: colorSeverity[ score > 24 ? 4 : Math.floor(score / 5) ]}}>
                             {scoreMatch[ score > 24 ? 4 : Math.floor(score / 5)].Interpretation}
                         </div>
-                        
+
                         <div className="recommendation">
                             <span>Recommendation: </span>
                             {scoreMatch[ score > 24 ? 4 : Math.floor(score / 5) ].Suggestion}

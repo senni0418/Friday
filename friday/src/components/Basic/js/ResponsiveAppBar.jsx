@@ -36,9 +36,8 @@ const ResponsiveAppBar = () => {
     };
 
     const pagesOnClick = (page) => {
-        setAnchorElNav(null);
-        console.log("here "+page)
-        navigate('../app/'+page, { replace: true })
+        console.log('../'+page.toLowerCase())
+        navigate('../'+page.toLowerCase())
     }
 
     return (<AppBar position="static" color = "inherit">

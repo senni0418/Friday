@@ -1,10 +1,11 @@
-  .page {
+ .page {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
   }
   .page {
     font-family: "Verdana", cursive, sans-serif;
@@ -18,8 +19,8 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-  }
-  
+  } */
+
   .assessment {
     background-color: #252d4a;
     width: 500px;
@@ -32,13 +33,13 @@
     flex-direction: column;
     justify-content: space-evenly;
   }
-  
+
   .score-section {
     display: flex;
     font-size: 24px;
     align-items: center;
   }
-  
+
   .interpretation {
     display: flex;
     font-size: 30px;
@@ -59,21 +60,21 @@
     position: relative;
     margin-bottom: 25px;
   }
-  
+
   .question-count {
     margin-bottom: 20px;
   }
-  
+
   .question-count span {
     font-size: 28px;
   }
-  
+
   .question-text {
     margin-bottom: 12px;
     font-weight: bold;
     font-style: italic;
   }
-  
+
   .answer-section {
     width: 100%;
     display: flex;
@@ -93,6 +94,7 @@
       font-size: 16px;
       color: black;
   }
+
   
   .answer-section button {
     width: 100%;
@@ -108,6 +110,9 @@
     border: 5px solid #234668;
     cursor: pointer;
   }
+
+
+
   
   .answer-section button:hover {
     background-color: #555e7d;
