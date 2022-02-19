@@ -37,7 +37,7 @@ const ResponsiveAppBar = () => {
     };
 
     const pagesOnClick = (page) => {
-        console.log('../'+page.toLowerCase())
+        setAnchorElNav(null);
         navigate('../'+page.toLowerCase())
     }
 
