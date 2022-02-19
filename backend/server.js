@@ -2,6 +2,7 @@ const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
 const getSentiment = require('./google-sentinent')
+const bodyParser = require('body-parser')
 
 const app = express();
 app.use(express.json());
