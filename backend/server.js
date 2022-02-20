@@ -8,6 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 
 //expose an endpoint for assembly AI
 app.get('/', async (req, res) => {
@@ -24,11 +25,18 @@ app.get('/', async (req, res) => {
 });
 
 
-app.get('/sentiment', async(req, res) => {
-  const journal = req.body.text
-  getSentiment((res_json) => {
-    res.json(res_json)
-  }, journal)
+app.use('/sentiment', async(req, res) => {
+  try{
+    const journal = req.body.text
+    getSentiment((res_json) => {
+      console.log(res_json)
+      res.json(res_json)
+    }, journal)
+  }catch (error) {
+    const {response: {status, data}} = error;
+    console.log(status)
+  }
+
 })
 
 app.set('port', 5000);
