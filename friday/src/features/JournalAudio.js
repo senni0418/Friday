@@ -1,15 +1,11 @@
 import React, {useState, useEffect, useRef} from 'react';
 import { IconButton } from '@mui/material';
 import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import MicIcon from '@mui/icons-material/Mic';
 import MicOffRoundedIcon from '@mui/icons-material/MicOffRounded';
 import RecordRTC, { StereoAudioRecorder } from 'recordrtc';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import Grid from '@mui/material/Grid';
-import { palette } from '@mui/system';
-import { red } from '@mui/material/colors';
 import { Typography,  Paper } from '@mui/material';
 import Highlighter from "react-highlight-words";
 
@@ -53,7 +49,7 @@ const JournalAudio = () => {
                 setText('')
                 setHasResult(true)
                 bottomRref.current.scrollIntoView({ behavior: 'smooth' });
-                
+
             })
         });
 
@@ -159,6 +155,7 @@ const JournalAudio = () => {
                         placeholder="Start writing your daily journals"
                         multiline
                         rows={20}
+                        variant="filled"
                         sx={{width: 1000}}
                         value={text}
                         onChange={(e) => {
@@ -175,15 +172,17 @@ const JournalAudio = () => {
                     <CheckCircleIcon sx={{ fontSize: 35 }}/>
                 </IconButton>
             </div>
-            {hasResult ? <div style={{marginTop: '100px'}}>
-                <Box sx={{ typography: 'title', textAlign:'center', fontWeight: 'bold', fontSize: 30 }}>AI thinks you should ...</Box>
-                <div style={{marginTop: '100px'}}>
+            {hasResult ? <div style={{marginTop: '100px'}} className="abstract" >
+                <Box  sx={{ typography: 'title', textAlign:'center', fontWeight: 'bold', fontSize: 30 }}>
+                    AI thinks you feel ...
+                </Box>
+                <div style={{marginTop: '100px'}} className="sentiment">
                     <Box sx={{
                         display: "flex",
                         flexDirection: "row",
                         margin: "0 100px"
                     }}>
-                        <Paper elevation={5} sx={{ p: 3, m: 3, width: '100%', height: '100%', minWidth: 200, minHeight: 500}} >
+                        <Paper elevation={5} sx={{ p: 3, m: 3, width: '100%', height: '100%', minWidth: 200, minHeight: 450}} >
                             <Typography variant="h3" gutterBottom component="div">
                                 Positive
                             </Typography>
@@ -230,6 +229,7 @@ const JournalAudio = () => {
                         </Paper>
                         <div ref={bottomRref} />
                     </Box>
+
                 </div>
             </div>: <div/>}
         </>

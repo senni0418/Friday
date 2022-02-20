@@ -22,11 +22,10 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/assessment" element={<Assessment />} />
           <Route path="/journal" element={<JournalMain />} />
-          {/* <Route path="/journal" element={<Journal />} />
           <Route path='/feedback' component={() => {
             window.location.href = 'https://google.com';
             return null;
-          }}/> */}
+          }}/>
           <Route path="/*" element={<Error/>} />
       </Routes>
     </Router>

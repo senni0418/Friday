@@ -4,7 +4,6 @@ import { auth, logInWithEmailAndPassword, signInWithGoogle } from "../../helpers
 import { useAuthState } from "react-firebase-hooks/auth";
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -43,7 +42,8 @@ const Login = (props) => {
       // maybe trigger a loading screen
       return;
     }
-    if (user) navigate("/home");
+    console.log(user)
+    if (user) navigate("/about");
   }, [user, loading]);
 
   return (
