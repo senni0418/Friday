@@ -1,15 +1,11 @@
 import React, {useState, useEffect, useRef} from 'react';
 import { IconButton } from '@mui/material';
 import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import MicIcon from '@mui/icons-material/Mic';
 import MicOffRoundedIcon from '@mui/icons-material/MicOffRounded';
 import RecordRTC, { StereoAudioRecorder } from 'recordrtc';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import Grid from '@mui/material/Grid';
-import { palette } from '@mui/system';
-import { red } from '@mui/material/colors';
 import { Typography,  Paper } from '@mui/material';
 
 let socket;
