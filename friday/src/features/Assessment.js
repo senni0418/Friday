@@ -7,7 +7,7 @@ import ResponsiveAppBar from '../components/Basic/js/ResponsiveAppBar';
 function Assessment() {
 
     const questions = qBank
-    const colorSeverity = ["green", "yellow", "orange", "orangered", "red"]
+    const colorSeverity = ["white", "yellow", "orange", "orangered", "red"]
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0)
@@ -42,6 +42,9 @@ function Assessment() {
                                 <span>Recommendation: </span>
                                 {scoreMatch[ score > 24 ? 4 : Math.floor(score / 5) ].Suggestion}
                             </div>
+                            <div className="answer-section">
+                                <h2>Need mental health services? <a href="https://www.camh.ca/en/health-info/guides-and-publications/looking-for-mental-health-services"> Visit here </a></h2>
+                            </div>
                         </>
 
                     ) : (
@@ -63,19 +66,6 @@ function Assessment() {
                         </>
                     )}
                 </div>
-                {showScore ?  (
-                    <div className="mental-help">
-                        <div className="prompt">
-                            <h2>Need mental health services? </h2>
-                        </div>
-                        <div className="link">
-                            <a href="https://www.camh.ca/en/health-info/guides-and-publications/looking-for-mental-health-services"> Visit here </a>
-                        </div>
-                    </div>
-                ):
-                    <></>
-                }
-
             </div>
         </div>
     )

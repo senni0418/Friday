@@ -16,7 +16,7 @@ export default function JournalMain() {
   const [value, setValue] = React.useState(0);
   const [showAudio, setShowAudio] = React.useState(true);
   return (
-    <Box sx={{ pb: 7 }}>
+    <Box sx={{ pb: 7 }} className="journal">
       <ResponsiveAppBar/>
 
       <CssBaseline />

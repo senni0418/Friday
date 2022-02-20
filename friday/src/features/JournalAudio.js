@@ -155,6 +155,7 @@ const JournalAudio = () => {
                         placeholder="Start writing your daily journals"
                         multiline
                         rows={20}
+                        variant="filled"
                         sx={{width: 1000}}
                         value={text}
                         onChange={(e) => {

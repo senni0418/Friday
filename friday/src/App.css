@@ -45,6 +45,12 @@
   color:rgb(126, 123, 123);
 }
 
+.about {
+  background-color: hsl(87, 95%, 92%);
+  /* Full height */
+
+}
+
 
 .home {
   background-image: url("../public/rocket.png");
@@ -56,4 +62,11 @@
   background-position: 15% 50%;
   background-repeat: no-repeat;
   background-size: 60vw auto;
+}
+
+.journal {
+  /* Full height */
+  height: 100vh;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
 }

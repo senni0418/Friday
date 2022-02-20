@@ -28,12 +28,13 @@ const Journal = () => {
                         rows={20}
                         sx={{width: 1000}}
                         value={text}
+                        variant="filled"
                         onChange={(e) => {
                             setText(e.target.value)
                         }}
                     />
-                </Box>    
-                {console.log(text)}       
+                </Box>
+                {console.log(text)}
             </div>
             <div style={{display: 'flex',justifyContent:'right', marginTop: '10px', marginRight: '410px'}}>
                 <Button onClick={onClick}>Button</Button>
