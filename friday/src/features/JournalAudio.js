@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { IconButton } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -27,34 +27,34 @@ const JournalAudio = () => {
 
     const [hasResult, setHasResult] = useState(true)
 
+    const [pos_sentences, setPosSentences] = useState([])
 
-    const onClick = () => {
+    const [neu_sentences, setNeuSentences] = useState([])
+
+    const [neg_sentences, setNegSentences] = useState([])
+
+
+    const onClick = async () => {
+
+
         let plainText = text.replace(/(\r\n|\n|\r)/gm, "");
-        let url = 'http://localhost:5000/sentiment';
         let data = {text: plainText};
-
-        fetch(url, {
-            method: "POST",
-            headers: {'Content-Type': 'application/json'},
+        const requestOptions = {
+            method: 'POST', d
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
-        }).then(res => {
-            console.log("Request complete! response:", res);
+        };
+        fetch('http://localhost:5000/sentiment', requestOptions)
+        .then(resp => {
+            resp.json().then((result) => {
+                setPosSentences(result.positive)
+                setNeuSentences(result.neutral)
+                setNegSentences(result.negative)
+                console.log(result.positive)
+                console.log(result.neutral)
+                console.log(result.negative)
+            })
         });
-
-        // var request = new Request(url,
-        //     {
-        //         method: 'POST',
-        //         body: {'text': plainText},
-        //         headers: new Headers({ 'Content-Type': 'application/json' })
-        //     });
-
-        // fetch(request)
-        //     .then(resp => {
-        //         console.log(resp)
-        //     })
-        //     .catch(err => {
-        //         console.log(err)
-        //     });
     }
 
     const micOnClick = async () => {
