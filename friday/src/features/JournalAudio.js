@@ -40,7 +40,7 @@ const JournalAudio = () => {
         let plainText = text.replace(/(\r\n|\n|\r)/gm, "");
         let data = {text: plainText};
         const requestOptions = {
-            method: 'POST', d
+            method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         };
