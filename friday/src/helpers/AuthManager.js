@@ -65,9 +65,11 @@ const signInWithGoogle = async () => {
           email: user.email,
         });
       }
+      signOut(auth);
     } catch (err) {
       console.error(err);
       alert(err.message);
+
   }
 };
 

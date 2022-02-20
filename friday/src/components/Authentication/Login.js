@@ -42,7 +42,8 @@ const Login = (props) => {
       // maybe trigger a loading screen
       return;
     }
-    if (user) navigate("/home");
+    console.log(user)
+    if (user) navigate("/about");
   }, [user, loading]);
 
   return (
