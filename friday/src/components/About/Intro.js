@@ -13,7 +13,7 @@ const faces = [
     "http://i.pravatar.cc/300?img=3",
     "http://i.pravatar.cc/300?img=4"
   ];
-    
+
 
 const theme = createTheme();
 
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const introduction = "We are a group of enthusiastic student developer from McMaster University. Friday is a project we made during StormHacks 2022 to support people with mental disorder." 
+const introduction = "We are a group of enthusiastic student developer from McMaster University. Friday is a project we made during StormHacks 2022 to support people with mental disorder."
 
 function Intro() {
     const classes = useStyles();
@@ -88,7 +88,7 @@ function Intro() {
                     </CardContent>
 
                 </CardContent>
-            </Card>            
+            </Card>
         </ThemeProvider>
 
     )

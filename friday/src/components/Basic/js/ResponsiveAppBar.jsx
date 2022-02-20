@@ -13,7 +13,6 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { grey } from '@mui/material/colors';
-import { teel} from '@mui/material/colors';
 
 const pages = ['About', 'Journal', 'Assessment', 'Feedback'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -40,6 +39,11 @@ const ResponsiveAppBar = () => {
         setAnchorElNav(null);
         navigate('../'+page.toLowerCase())
     }
+
+    const settingOnClick = (setting) => {
+      setAnchorElUser(null);
+      console.log(setting.toLowerCase());
+  }
 
     return (<AppBar position="static" color = "inherit">
       <Container maxWidth="xl">
@@ -88,10 +92,11 @@ const ResponsiveAppBar = () => {
             vertical: 'top',
             horizontal: 'right',
         }} open={Boolean(anchorElUser)} onClose={handleCloseUserMenu}>
-              {settings.map((setting) => (<MenuItem key={setting} onClick={handleCloseUserMenu}>
+              {settings.map((setting) => (<MenuItem key={setting} onClick={() => settingOnClick}>
                   <Typography textAlign="center" sx={{ color: defaultColor }} >{setting}</Typography>
                 </MenuItem>))}
             </Menu>
+
           </Box>
         </Toolbar>
       </Container>
