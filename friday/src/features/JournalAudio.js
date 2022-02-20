@@ -11,6 +11,7 @@ import Grid from '@mui/material/Grid';
 import { palette } from '@mui/system';
 import { red } from '@mui/material/colors';
 import { Typography,  Paper } from '@mui/material';
+import Highlighter from "react-highlight-words";
 
 let socket;
 let recorder;
@@ -32,8 +33,6 @@ const JournalAudio = () => {
     const [neu_sentences, setNeuSentences] = useState([])
 
     const [neg_sentences, setNegSentences] = useState([])
-
-
 
     const onClick = async () => {
 
@@ -188,32 +187,46 @@ const JournalAudio = () => {
                             <Typography variant="h3" gutterBottom component="div">
                                 Positive
                             </Typography>
-                            {pos_sentences.map((positive) => (
-                                <Typography variant="body1" gutterBottom>
-                                    {positive}
-                                </Typography>
-                            ))}
-
+                            <Typography variant="body1" gutterBottom>
+                                {pos_sentences.map((positive) => (
+                                    <Highlighter
+                                    highlightClassName="pos_highlighter"
+                                    searchWords={positive.entities}
+                                    autoEscape={true}
+                                    textToHighlight={positive.sentence}
+                                    />
+                                ))}
+                            </Typography>
                         </Paper>
                         <Paper elevation={5} sx={{ p: 3, m: 3, width: '100%', height: '100%', minWidth: 200, minHeight: 500, marginTop: "100px"}} >
                             <Typography variant="h3" gutterBottom component="div">
                                 Neutral
                             </Typography>
-                            {neu_sentences.map((neutral) => (
-                                <Typography variant="body1" gutterBottom>
-                                    {neutral}
-                                </Typography>
-                            ))}
+                            <Typography variant="body1" gutterBottom>
+                                {neu_sentences.map((neutral) => (
+                                    <Highlighter
+                                    highlightClassName="neu_highlighter"
+                                    searchWords={neutral.entities}
+                                    autoEscape={true}
+                                    textToHighlight={neutral.sentence}
+                                    />
+                                ))}
+                            </Typography>
                         </Paper>
                         <Paper elevation={5} sx={{ p: 3, m: 3, width: '100%', height: '100%', minWidth: 200, minHeight: 500, marginTop: "200px"}} >
                             <Typography variant="h3" gutterBottom component="div">
                                 Negative
                             </Typography>
-                            {neg_sentences.map((negative) => (
-                                <Typography variant="body1" gutterBottom>
-                                    {negative}
-                                </Typography>
-                            ))}
+                            <Typography variant="body1" gutterBottom>
+                                {neg_sentences.map((negative) => (
+                                    <Highlighter
+                                    highlightClassName="neg_highlighter"
+                                    searchWords={negative.entities}
+                                    autoEscape={true}
+                                    textToHighlight={negative.sentence}
+                                    />
+                                ))}
+                            </Typography>
                         </Paper>
                         <div ref={bottomRref} />
                     </Box>
