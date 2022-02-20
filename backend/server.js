@@ -1,11 +1,15 @@
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
+const getSentiment = require('./google-sentinent')
+const bodyParser = require('body-parser')
 
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.use(bodyParser.urlencoded({extended: false}))
 
+//expose an endpoint for assembly AI
 app.get('/', async (req, res) => {
   try {
     const response = await axios.post('https://api.assemblyai.com/v2/realtime/token', // use account token to get a temp user token
@@ -18,6 +22,14 @@ app.get('/', async (req, res) => {
     res.status(status).json(data);
   }
 });
+
+
+app.get('/sentiment', async(req, res) => {
+  const journal = req.body.text
+  getSentiment((res_json) => {
+    res.json(res_json)
+  }, journal)
+})
 
 app.set('port', 5000);
 const server = app.listen(app.get('port'), () => {
