@@ -70,3 +70,20 @@
   background-position: 50% 50%;
   background-repeat: no-repeat;
 }
+
+
+.sentiment{
+  background-image: url("../public/abstract.png");
+  /* Full height */
+  width: 100vw;
+  height: 100%;
+
+}
+.abstract{
+  /* Full height */
+  /* Center and scale the image nicely */
+  background-position: 50% -1000%;
+  background-repeat: no-repeat;
+  background-size:contain;
+
+}
