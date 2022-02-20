@@ -32,28 +32,28 @@ const JournalAudio = () => {
         let plainText = text.replace(/(\r\n|\n|\r)/gm, "");
         let url = 'http://localhost:5000/sentiment';
         let data = {text: plainText};
-        
+
         fetch(url, {
             method: "POST",
-            headers: {'Content-Type': 'application/json'}, 
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(data)
         }).then(res => {
             console.log("Request complete! response:", res);
         });
 
-        // var request = new Request(url, 
-        //     { 
-        //         method: 'POST', 
-        //         body: {'text': plainText}, 
-        //         headers: new Headers({ 'Content-Type': 'application/json' }) 
+        // var request = new Request(url,
+        //     {
+        //         method: 'POST',
+        //         body: {'text': plainText},
+        //         headers: new Headers({ 'Content-Type': 'application/json' })
         //     });
 
-        // fetch(request) 
-        //     .then(resp => { 
-        //         console.log(resp)        
-        //     }) 
-        //     .catch(err => { 
-        //         console.log(err)         
+        // fetch(request)
+        //     .then(resp => {
+        //         console.log(resp)
+        //     })
+        //     .catch(err => {
+        //         console.log(err)
         //     });
     }
 
@@ -92,7 +92,7 @@ const JournalAudio = () => {
                 console.error(event);
                 socket.close();
             }
-            
+
             socket.onclose = event => {
                 console.log(event);
                 socket = null;
@@ -116,7 +116,7 @@ const JournalAudio = () => {
                             const reader = new FileReader();
                             reader.onload = () => {
                             const base64data = reader.result;
-            
+
                             // audio data must be sent as a base64 encoded string
                             if (socket) {
                             socket.send(JSON.stringify({ audio_data: base64data.split('base64,')[1] }));
@@ -125,7 +125,7 @@ const JournalAudio = () => {
                             reader.readAsDataURL(blob);
                         },
                         });
-            
+
                         recorder.startRecording();
                     })
                     .catch((err) => console.error(err));
@@ -149,7 +149,7 @@ const JournalAudio = () => {
 
     return (
         <>
-             <div style={{display: 'flex',justifyContent:'center', marginTop: '100px'}}>
+            <div style={{display: 'flex',justifyContent:'center', marginTop: '100px'}}>
                 <Box>
                     <TextField
                         placeholder="Start writing your daily journals"
@@ -161,10 +161,10 @@ const JournalAudio = () => {
                             setText(e.target.value)
                         }}
                     />
-                </Box>    
-                {console.log(text)}       
+                </Box>
+                {console.log(text)}
             </div>
-            <div style={{justifyContent:'right', marginTop: '10px', marginLeft: '1300px'}}>
+            <div style={{justifyContent:'left', marginTop: '1vh', marginLeft: '81vw'}}>
                 <IconButton aria-label="Mic" component="span" onClick={micOnClick}>
                     {isRecording? <MicOffRoundedIcon sx={{ fontSize: 35 }}/> : <MicIcon sx={{ fontSize: 35 }}/>}
                 </IconButton>
@@ -195,7 +195,7 @@ const JournalAudio = () => {
                 </div>
             </div>: <div/>}
         </>
-       
+
     );
 }
 
